@@ -1,14 +1,19 @@
 {
-  "name": "backendjs",
-  "version": "0.1.0",
-  "description": "Veterinary clinic web app - VITMAV42 homework",
-  "main": "app.js",
-  "scripts": {
-    "start": "node app.js",
-    "dev": "node --watch app.js"
-  },
-  "license": "MIT",
-  "dependencies": {
-    "express": "^5.2.1"
-  }
+    "name": "backendjs",
+    "version": "0.1.0",
+    "description": "Veterinary clinic administration app - owners, animals and treatments.",
+    "main": "index.js",
+    "scripts": {
+        "start": "node index.js",
+        "dev": "node --watch index.js",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/albi005/backendjs.git"
+    },
+    "license": "MIT",
+    "dependencies": {
+        "express": "^5.2.1"
+    }
 }
