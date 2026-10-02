@@ -22,14 +22,22 @@ body {
     line-height: 1.6;
 }
 
+a {
+    font-weight: 700;
+}
+
 nav {
     margin-bottom: 24px;
 }
 
 nav a {
-    color: var(--link);
+    color: var(--muted);
     text-decoration: none;
     margin-right: 18px;
+}
+
+nav a.active {
+    color: #ffffff;
 }
 
 nav a:hover {
