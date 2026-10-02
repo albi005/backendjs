@@ -14,110 +14,133 @@
     </nav>
 
     <main class="detail">
-        <div class="field">
-            <span class="label">Név:</span>
-            <input class="editable" type="text" value="Bodri" aria-label="Név">
-            <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
-            </button>
-        </div>
+        <div class="entity">
+            <div class="fields">
+                <div class="field">
+                    <span class="label">Név:</span>
+                    <input class="editable" type="text" value="Bodri" aria-label="Név">
+                </div>
 
-        <div class="field">
-            <span class="label">Faj:</span>
-            <input class="editable" type="text" value="Kutya" aria-label="Faj">
-        </div>
+                <div class="field">
+                    <span class="label">Faj:</span>
+                    <input class="editable" type="text" value="Kutya" aria-label="Faj">
+                </div>
 
-        <div class="field">
-            <span class="label">Tulajdonos:</span>
-            <a class="row-link value" href="/owner.html">Molnár Gábor</a>
-            <button class="icon-btn delete" type="button" title="Törlés" aria-label="Törlés">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/></svg>
-            </button>
-        </div>
+                <div class="field">
+                    <span class="label">Tulajdonos:</span>
+                    <a class="row-link value" href="/owner.html">Molnár Gábor</a>
+                </div>
 
-        <div class="field">
-            <span class="label">Cím:</span>
-            <span class="value">Eger, Vasút utca 34.</span>
+                <div class="field">
+                    <span class="label">Cím:</span>
+                    <span class="value">Eger, Vasút utca 34.</span>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
+                </button>
+                <button class="icon-btn delete" type="button" title="Törlés" aria-label="Törlés">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/></svg>
+                </button>
+            </div>
         </div>
 
         <a class="add" href="/animal.html">+ Hozzáadás</a>
 
         <table class="list">
             <tbody>
-                <tr>
-                    <td>
+                <tr class="treatment">
+                    <td class="treatment-status">
+                        <input class="vaccinated" type="checkbox" checked aria-label="Oltva">
                         <svg class="icon syringe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><g transform="rotate(45 12 12)"><rect x="8" y="4" width="8" height="9" rx="1"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="8.5" y1="7" x2="15.5" y2="7"/></g></svg>912 napja
                     </td>
-                    <td>Veszettség elleni oltás</td>
+                    <td><input class="editable" type="text" value="Veszettség elleni oltás" aria-label="Kezelés leírása"></td>
                     <td>
                         <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>1010 napja</td>
-                    <td>Éves szűrővizsgálat</td>
+                <tr class="treatment">
+                    <td class="treatment-status">
+                        <input class="vaccinated" type="checkbox" aria-label="Oltva">
+                        <svg class="icon syringe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><g transform="rotate(45 12 12)"><rect x="8" y="4" width="8" height="9" rx="1"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="8.5" y1="7" x2="15.5" y2="7"/></g></svg>1010 napja
+                    </td>
+                    <td><input class="editable" type="text" value="Éves szűrővizsgálat" aria-label="Kezelés leírása"></td>
                     <td>
                         <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>1097 napja</td>
-                    <td>Fogkő-eltávolítás</td>
+                <tr class="treatment">
+                    <td class="treatment-status">
+                        <input class="vaccinated" type="checkbox" aria-label="Oltva">
+                        <svg class="icon syringe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><g transform="rotate(45 12 12)"><rect x="8" y="4" width="8" height="9" rx="1"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="8.5" y1="7" x2="15.5" y2="7"/></g></svg>1097 napja
+                    </td>
+                    <td><input class="editable" type="text" value="Fogkő-eltávolítás" aria-label="Kezelés leírása"></td>
                     <td>
                         <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>
+                <tr class="treatment">
+                    <td class="treatment-status">
+                        <input class="vaccinated" type="checkbox" checked aria-label="Oltva">
                         <svg class="icon syringe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><g transform="rotate(45 12 12)"><rect x="8" y="4" width="8" height="9" rx="1"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="8.5" y1="7" x2="15.5" y2="7"/></g></svg>1561 napja
                     </td>
-                    <td>Kombinált oltás</td>
+                    <td><input class="editable" type="text" value="Kombinált oltás" aria-label="Kezelés leírása"></td>
                     <td>
                         <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>1806 napja</td>
-                    <td>Féregtelenítés</td>
+                <tr class="treatment">
+                    <td class="treatment-status">
+                        <input class="vaccinated" type="checkbox" aria-label="Oltva">
+                        <svg class="icon syringe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><g transform="rotate(45 12 12)"><rect x="8" y="4" width="8" height="9" rx="1"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="8.5" y1="7" x2="15.5" y2="7"/></g></svg>1806 napja
+                    </td>
+                    <td><input class="editable" type="text" value="Féregtelenítés" aria-label="Kezelés leírása"></td>
                     <td>
                         <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>
+                <tr class="treatment">
+                    <td class="treatment-status">
+                        <input class="vaccinated" type="checkbox" checked aria-label="Oltva">
                         <svg class="icon syringe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><g transform="rotate(45 12 12)"><rect x="8" y="4" width="8" height="9" rx="1"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="8.5" y1="7" x2="15.5" y2="7"/></g></svg>1884 napja
                     </td>
-                    <td>Veszettség elleni oltás</td>
+                    <td><input class="editable" type="text" value="Veszettség elleni oltás" aria-label="Kezelés leírása"></td>
                     <td>
                         <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>2201 napja</td>
-                    <td>Ízületi gyulladás kezelése</td>
+                <tr class="treatment">
+                    <td class="treatment-status">
+                        <input class="vaccinated" type="checkbox" aria-label="Oltva">
+                        <svg class="icon syringe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><g transform="rotate(45 12 12)"><rect x="8" y="4" width="8" height="9" rx="1"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="8.5" y1="7" x2="15.5" y2="7"/></g></svg>2201 napja
+                    </td>
+                    <td><input class="editable" type="text" value="Ízületi gyulladás kezelése" aria-label="Kezelés leírása"></td>
                     <td>
                         <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
                         </button>
                     </td>
                 </tr>
-                <tr>
-                    <td>
+                <tr class="treatment">
+                    <td class="treatment-status">
+                        <input class="vaccinated" type="checkbox" checked aria-label="Oltva">
                         <svg class="icon syringe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><g transform="rotate(45 12 12)"><rect x="8" y="4" width="8" height="9" rx="1"/><line x1="12" y1="13" x2="12" y2="21"/><line x1="8.5" y1="7" x2="15.5" y2="7"/></g></svg>2492 napja
                     </td>
-                    <td>Kombinált oltás</td>
+                    <td><input class="editable" type="text" value="Kombinált oltás" aria-label="Kezelés leírása"></td>
                     <td>
                         <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
                             <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>

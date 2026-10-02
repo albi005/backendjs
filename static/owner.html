@@ -14,25 +14,32 @@
     </nav>
 
     <main class="detail">
-        <div class="field">
-            <span class="label">Név:</span>
-            <input class="editable" type="text" value="Molnár Gábor" aria-label="Név">
-            <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
-            </button>
-        </div>
+        <div class="entity">
+            <div class="fields">
+                <div class="field">
+                    <span class="label">Név:</span>
+                    <input class="editable" type="text" value="Molnár Gábor" aria-label="Név">
+                </div>
 
-        <div class="field">
-            <span class="label">Cím:</span>
-            <input class="editable" type="text" value="Eger, Vasút utca 34." aria-label="Cím">
-        </div>
+                <div class="field">
+                    <span class="label">Cím:</span>
+                    <input class="editable" type="text" value="Eger, Vasút utca 34." aria-label="Cím">
+                </div>
 
-        <div class="field">
-            <span class="label">Elérhetőség:</span>
-            <input class="editable" type="text" value="molnar.gabor@citromail.hu" aria-label="Elérhetőség">
-            <button class="icon-btn delete" type="button" title="Törlés" aria-label="Törlés">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/></svg>
-            </button>
+                <div class="field">
+                    <span class="label">Elérhetőség:</span>
+                    <input class="editable" type="text" value="molnar.gabor@citromail.hu" aria-label="Elérhetőség">
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="icon-btn save" type="button" title="Mentés" aria-label="Mentés">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
+                </button>
+                <button class="icon-btn delete" type="button" title="Törlés" aria-label="Törlés">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/></svg>
+                </button>
+            </div>
         </div>
 
         <a class="add" href="/animal-new.html">+ Hozzáadás</a>

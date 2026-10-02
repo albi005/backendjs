@@ -97,6 +97,23 @@ a.add:hover {
     max-width: 640px;
 }
 
+.entity {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.fields {
+    display: flex;
+    flex-direction: column;
+}
+
+.actions {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
 .field {
     display: flex;
     align-items: center;
@@ -158,4 +175,21 @@ svg.icon.syringe {
     width: 14px;
     height: 14px;
     margin-right: 6px;
+}
+
+input.vaccinated {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+    vertical-align: middle;
+    accent-color: var(--green);
+    cursor: pointer;
+}
+
+input.vaccinated:not(:checked) + svg.syringe {
+    opacity: 0.2;
+}
+
+tr.treatment input.editable {
+    min-width: 240px;
 }
