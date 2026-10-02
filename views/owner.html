@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Frank Lawson - Veterinary Clinic</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <nav>
+    <a href="/">Vaccinations</a>
+    <a href="/owners">Owners</a>
+    <a href="/animals">Animals</a>
+  </nav>
+
+  <main class="detail">
+    <div class="field">
+      <span class="label">Name:</span>
+      <input class="editable" type="text" value="Frank Lawson" aria-label="Name">
+      <button class="icon-btn save" type="button" title="Save" aria-label="Save">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
+      </button>
+    </div>
+
+    <div class="field">
+      <span class="label">Address:</span>
+      <input class="editable" type="text" value="27 Cherry Hill" aria-label="Address">
+    </div>
+
+    <div class="field">
+      <span class="label">Contact:</span>
+      <input class="editable" type="text" value="+1 555 0195" aria-label="Contact">
+      <button class="icon-btn delete" type="button" title="Delete" aria-label="Delete">
+        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M4 7h16"/><path d="M9 7V4h6v3"/><path d="M6 7l1 13h10l1-13"/></svg>
+      </button>
+    </div>
+
+    <a class="add" href="/animals/new">+ Add</a>
+
+    <table class="list">
+      <tbody>
+        <tr>
+          <td><a class="row-link" href="/animals/2">Limo</a></td>
+          <td>Cat</td>
+        </tr>
+        <tr>
+          <td><a class="row-link" href="/animals/3">Rex</a></td>
+          <td>Dog</td>
+        </tr>
+      </tbody>
+    </table>
+  </main>
+</body>
+</html>

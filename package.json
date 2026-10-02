@@ -1,0 +1,14 @@
+{
+  "name": "backendjs",
+  "version": "0.1.0",
+  "description": "Veterinary clinic web app - VITMAV42 homework",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "node --watch app.js"
+  },
+  "license": "MIT",
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}

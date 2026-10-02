@@ -1,0 +1,150 @@
+:root {
+  --bg: #1b1b1b;
+  --text: #d6d6d6;
+  --link: #6cb6ff;
+  --green: #7ec699;
+  --red: #e06c75;
+  --selected: #5a1f1f;
+  --muted: #8a8a8a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "DejaVu Sans Mono", "Liberation Mono", "Courier New", monospace;
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+nav {
+  margin-bottom: 24px;
+}
+
+nav a {
+  color: var(--link);
+  text-decoration: none;
+  margin-right: 18px;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+a.row-link {
+  color: inherit;
+  text-decoration: none;
+}
+
+a.row-link:hover {
+  text-decoration: underline;
+}
+
+table.list {
+  border-collapse: collapse;
+}
+
+table.list td {
+  padding: 0 24px 0 0;
+  white-space: nowrap;
+  vertical-align: top;
+}
+
+tr.selected td {
+  background: var(--selected);
+}
+
+.status.never,
+.status.recent {
+  color: var(--green);
+}
+
+.status.overdue {
+  color: var(--red);
+}
+
+.status {
+  padding-right: 12px;
+}
+
+a.add {
+  display: inline-block;
+  margin: 16px 0 8px;
+  padding: 2px 12px;
+  background: #2f5e2f;
+  color: #dff5df;
+  text-decoration: none;
+}
+
+a.add:hover {
+  background: #3a723a;
+}
+
+.detail {
+  max-width: 640px;
+}
+
+.field {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.field .label {
+  color: var(--text);
+}
+
+.field .value {
+  color: var(--text);
+}
+
+input.editable {
+  background: transparent;
+  border: 1px solid transparent;
+  color: var(--text);
+  font: inherit;
+  padding: 1px 4px;
+  min-width: 220px;
+}
+
+input.editable:hover,
+input.editable:focus {
+  border-color: #555;
+  outline: none;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  color: var(--text);
+  cursor: pointer;
+  padding: 2px;
+  line-height: 0;
+}
+
+.icon-btn:hover {
+  color: var(--link);
+}
+
+.icon-btn.delete:hover {
+  color: var(--red);
+}
+
+svg.icon {
+  width: 18px;
+  height: 18px;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+svg.icon.syringe {
+  width: 14px;
+  height: 14px;
+  margin-right: 6px;
+}
