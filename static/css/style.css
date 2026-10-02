@@ -177,17 +177,26 @@ svg.icon.syringe {
     margin-right: 6px;
 }
 
-input.vaccinated {
-    width: 16px;
-    height: 16px;
-    margin-right: 6px;
-    vertical-align: middle;
-    accent-color: var(--green);
+label.vaccinated {
+    display: inline-flex;
+    align-items: center;
     cursor: pointer;
 }
 
-input.vaccinated:not(:checked) + svg.syringe {
+label.vaccinated input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    margin: 0;
+}
+
+label.vaccinated input:not(:checked) + svg.syringe {
     opacity: 0.2;
+}
+
+label.vaccinated input:focus-visible + svg.syringe {
+    outline: 1px solid var(--link);
 }
 
 tr.treatment input.editable {
