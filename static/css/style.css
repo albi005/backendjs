@@ -4,7 +4,6 @@
     --link: #6cb6ff;
     --green: #7ec699;
     --red: #e06c75;
-    --selected: #5a1f1f;
     --muted: #8a8a8a;
 }
 
@@ -17,7 +16,7 @@ body {
     padding: 24px;
     background: var(--bg);
     color: var(--text);
-    font-family: 'DejaVu Sans Mono', 'Liberation Mono', 'Courier New', monospace;
+    font-family: 'Cascadia Code', 'DejaVu Sans Mono', 'Liberation Mono', 'Courier New', monospace;
     font-size: 15px;
     line-height: 1.6;
 }
@@ -63,8 +62,9 @@ table.list td {
     vertical-align: top;
 }
 
-tr.selected td {
-    background: var(--selected);
+table.list tr:not(.treatment):hover td {
+    background: #ffffff;
+    color: #111111;
 }
 
 .status.never,
