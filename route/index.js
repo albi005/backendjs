@@ -93,7 +93,7 @@ module.exports = function (app) {
         renderMW(objRepo, 'animal')
     );
 
-    // Animal detail - keep last, it is a prefix for the treatment routes
+    // Animal detail
     app.use(
         '/animals/:animalid',
         getAnimalMW(objRepo),

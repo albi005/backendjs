@@ -5,7 +5,7 @@
 
 const requireOption = require('../requireOption');
 
-module.exports = function (objectrepository) {
+module.exports = function (objectRepository) {
     return function (req, res, next) {
         next();
     };
