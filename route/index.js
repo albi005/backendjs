@@ -19,7 +19,7 @@ const delTreatmentMW = require('../middleware/treatment/delTreatmentMW');
 module.exports = function (app) {
     const objRepo = {};
 
-    // Home - owners and their oldest vaccination
+    // Home
     app.get(
         '/',
         getDueVaccinationsMW(objRepo),
@@ -66,8 +66,7 @@ module.exports = function (app) {
         delAnimalMW(objRepo)
     );
 
-    // Treatments - always scoped to an animal, registered before the
-    // generic /animals/:animalid route so they are matched first
+    // Treatments
     app.use(
         '/animals/:animalid/treatments/new',
         getAnimalMW(objRepo),
