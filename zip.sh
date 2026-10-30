@@ -1,7 +1,7 @@
 #!/bin/sh
 set -eu
 cd "$(dirname "$0")"
-zip -qFSr backendjs.zip \
+zip -FSr backendjs.zip \
     index.js \
     package.json \
     package-lock.json \
