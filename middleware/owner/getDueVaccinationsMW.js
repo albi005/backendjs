@@ -4,17 +4,15 @@
  */
 
 const requireOption = require('../requireOption');
-const { owners, animals, treatments } = require('../../mockData');
+const { owners, animalsOfOwner, treatmentsOfAnimal } = require('../../mockData');
 
 module.exports = function (objectRepository) {
     return function (req, res, next) {
         res.locals.owners = owners.map((owner) => {
-            const vaccineDays = animals
-                .filter((animal) => animal._ownerId === owner._id)
-                .flatMap((animal) =>
-                    treatments.filter((t) => t._animalId === animal._id && t.vaccinated)
-                )
-                .map((t) => t.days);
+            const vaccineDays = animalsOfOwner(owner._id)
+                .flatMap((animal) => treatmentsOfAnimal(animal._id))
+                .filter((treatment) => treatment.vaccinated)
+                .map((treatment) => treatment.days);
 
             if (vaccineDays.length === 0) {
                 return { ...owner, vaccination: 'nem volt', status: 'never' };
