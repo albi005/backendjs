@@ -8,7 +8,6 @@ const { findAnimal, withOwner } = require('../../mockData');
 
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-        // TODO: get data from the database in a later step
         const animal = findAnimal(req.params.animalid);
         if (!animal) {
             return next(new Error('Animal not found'));

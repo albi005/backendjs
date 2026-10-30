@@ -1,9 +1,3 @@
-/**
- * Temporary in-memory data used while the database layer is not yet in
- * place. It lets the middleware fill res.locals so the EJS views can be
- * rendered. It will be replaced by the models in a later step.
- */
-
 const owners = [
     { _id: 'o1', name: 'Kovács István', address: 'Budapest, Kossuth Lajos utca 12.', contact: '+36 30 123 4567' },
     { _id: 'o2', name: 'Nagy Erzsébet', address: 'Debrecen, Petőfi Sándor utca 3.', contact: 'nagy.erzsebet@gmail.com' },
@@ -57,7 +51,6 @@ const animalsOfOwner = (ownerId) => animals.filter((animal) => animal._ownerId =
 const treatmentsOfAnimal = (animalId) =>
     treatments.filter((treatment) => treatment._animalId === animalId);
 
-/** Copy an animal and attach the name and address of its owner for the views. */
 const withOwner = (animal) => {
     const owner = findOwner(animal._ownerId);
     return {

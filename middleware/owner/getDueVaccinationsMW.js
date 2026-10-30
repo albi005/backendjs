@@ -8,7 +8,6 @@ const { owners, animals, treatments } = require('../../mockData');
 
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-        // TODO: get data from the database in a later step
         res.locals.owners = owners.map((owner) => {
             const vaccineDays = animals
                 .filter((animal) => animal._ownerId === owner._id)
