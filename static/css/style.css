@@ -68,12 +68,12 @@ table.list tr:not(.treatment):hover td {
 }
 
 .status.never,
-.status.recent {
-    color: var(--green);
-}
-
 .status.overdue {
     color: var(--red);
+}
+
+.status.recent {
+    color: var(--green);
 }
 
 .status {

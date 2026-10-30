@@ -1,10 +1,13 @@
 /**
- * Load every owner together with the days since the last vaccination of
- * their most overdue animal. The result is saved to res.locals.owners.
+ * Load every owner ordered by vaccination urgency: owners with a never
+ * vaccinated animal first, then by the days since the most overdue animal's
+ * last vaccination. The result is saved to res.locals.owners.
  */
 
 const requireOption = require('../requireOption');
 const { owners, animalsOfOwner, treatmentsOfAnimal } = require('../../mockData');
+
+const ANNUAL_VACCINATION_DAYS = 365;
 
 const daysSinceLastVaccination = (animal) => {
     const days = treatmentsOfAnimal(animal._id)
@@ -16,22 +19,33 @@ const daysSinceLastVaccination = (animal) => {
 
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-        res.locals.owners = owners.map((owner) => {
-            const days = animalsOfOwner(owner._id)
-                .map(daysSinceLastVaccination)
-                .filter((value) => value !== null);
+        res.locals.owners = owners
+            .map((owner) => {
+                const days = animalsOfOwner(owner._id).map(daysSinceLastVaccination);
 
-            if (days.length === 0) {
-                return { ...owner, vaccination: 'nem volt', status: 'never' };
-            }
+                if (days.length === 0) {
+                    return { ...owner, vaccination: '–', status: 'none', urgency: -Infinity };
+                }
 
-            const longest = Math.max.apply(null, days);
-            return {
-                ...owner,
-                vaccination: longest + ' napja',
-                status: longest < 1100 ? 'recent' : 'overdue'
-            };
-        });
+                if (days.includes(null)) {
+                    return {
+                        ...owner,
+                        vaccination: 'nem volt',
+                        status: 'never',
+                        urgency: Infinity
+                    };
+                }
+
+                const longest = Math.max.apply(null, days);
+                return {
+                    ...owner,
+                    vaccination: longest + ' napja',
+                    status: longest > ANNUAL_VACCINATION_DAYS ? 'overdue' : 'recent',
+                    urgency: longest
+                };
+            })
+            .sort((first, second) => second.urgency - first.urgency);
+
         return next();
     };
 };
