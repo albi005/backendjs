@@ -4,9 +4,17 @@
  */
 
 const requireOption = require('../requireOption');
+const { findOwner } = require('../../mockData');
 
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-        next();
+        // TODO: get data from the database in a later step
+        const owner = findOwner(req.params.ownerid);
+        if (!owner) {
+            return next(new Error('Owner not found'));
+        }
+
+        res.locals.owner = owner;
+        return next();
     };
 };

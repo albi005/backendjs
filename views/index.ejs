@@ -1,0 +1,19 @@
+<%- include('header', { title: 'Oltások' }) -%>
+<%- include('menu', { active: 'vaccinations' }) -%>
+
+    <main>
+        <table class="list">
+            <tbody>
+                <% owners.forEach(function (owner) { %>
+                    <tr>
+                        <td class="status <%= owner.status %>"><%= owner.vaccination %></td>
+                        <td><a class="row-link" href="/owners/<%= owner._id %>"><%= owner.name %></a></td>
+                        <td><%= owner.address %></td>
+                        <td><%= owner.contact %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </main>
+
+<%- include('footer') -%>

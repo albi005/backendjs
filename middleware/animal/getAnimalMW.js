@@ -4,9 +4,17 @@
  */
 
 const requireOption = require('../requireOption');
+const { findAnimal, withOwner } = require('../../mockData');
 
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-        next();
+        // TODO: get data from the database in a later step
+        const animal = findAnimal(req.params.animalid);
+        if (!animal) {
+            return next(new Error('Animal not found'));
+        }
+
+        res.locals.animal = withOwner(animal);
+        return next();
     };
 };

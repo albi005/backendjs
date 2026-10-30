@@ -4,9 +4,12 @@
  */
 
 const requireOption = require('../requireOption');
+const { owners } = require('../../mockData');
 
 module.exports = function (objectRepository) {
     return function (req, res, next) {
-        next();
+        // TODO: get data from the database in a later step
+        res.locals.owners = owners;
+        return next();
     };
 };

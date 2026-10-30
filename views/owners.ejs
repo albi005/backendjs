@@ -1,0 +1,20 @@
+<%- include('header', { title: 'Tulajdonosok' }) -%>
+<%- include('menu', { active: 'owners' }) -%>
+
+    <main>
+        <a class="add" href="/owners/new">+ Hozzáadás</a>
+
+        <table class="list">
+            <tbody>
+                <% owners.forEach(function (owner) { %>
+                    <tr>
+                        <td><a class="row-link" href="/owners/<%= owner._id %>"><%= owner.name %></a></td>
+                        <td><%= owner.address %></td>
+                        <td><%= owner.contact %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </main>
+
+<%- include('footer') -%>

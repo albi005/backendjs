@@ -5,6 +5,7 @@
         "dev": "node --watch index.js"
     },
     "dependencies": {
+        "ejs": "^7.0.2",
         "express": "^5.2.1"
     }
 }

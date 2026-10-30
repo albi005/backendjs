@@ -1,16 +1,13 @@
 /**
- * Render the view with the data collected in res.locals during the
- * middleware chain. It is the last element of every route.
- * The template engine is wired up in a later step; for now it only
- * reports which view would be rendered.
+ * Using the template engine render the values into the template.
+ * It is the last element of every route and reads everything the
+ * previous middlewares collected in res.locals.
  */
 
 const requireOption = require('./requireOption');
 
 module.exports = function (objectRepository, viewName) {
     return function (req, res) {
-        //res.render(viewName, res.locals);
-        console.log('render: ' + viewName);
-        res.end('Template: ' + viewName);
+        res.render(viewName, res.locals);
     };
 };

@@ -45,6 +45,7 @@ module.exports = function (app) {
     app.use(
         '/owners/:ownerid',
         getOwnerMW(objRepo),
+        getAnimalsMW(objRepo),
         saveOwnerMW(objRepo),
         renderMW(objRepo, 'owner')
     );
@@ -57,6 +58,7 @@ module.exports = function (app) {
     );
     app.use(
         '/animals/new',
+        getOwnersMW(objRepo),
         saveAnimalMW(objRepo),
         renderMW(objRepo, 'animal-new')
     );
@@ -70,6 +72,7 @@ module.exports = function (app) {
     app.use(
         '/animals/:animalid/treatments/new',
         getAnimalMW(objRepo),
+        getTreatmentsMW(objRepo),
         saveTreatmentMW(objRepo),
         renderMW(objRepo, 'animal')
     );
@@ -82,6 +85,7 @@ module.exports = function (app) {
     app.use(
         '/animals/:animalid/treatments/:treatmentid',
         getAnimalMW(objRepo),
+        getTreatmentsMW(objRepo),
         getTreatmentMW(objRepo),
         saveTreatmentMW(objRepo),
         renderMW(objRepo, 'animal')
@@ -93,10 +97,11 @@ module.exports = function (app) {
         renderMW(objRepo, 'animal')
     );
 
-    // Animal detail
+    // Animal detail - keep last, it is a prefix for the treatment routes
     app.use(
         '/animals/:animalid',
         getAnimalMW(objRepo),
+        getTreatmentsMW(objRepo),
         saveAnimalMW(objRepo),
         renderMW(objRepo, 'animal')
     );

@@ -1,0 +1,38 @@
+<%- include('header', { title: 'Új állat' }) -%>
+<%- include('menu', { active: 'animals' }) -%>
+
+    <main class="detail">
+        <form method="POST" action="/animals/new">
+            <div class="entity">
+                <div class="fields">
+                    <div class="field">
+                        <span class="label">Név:</span>
+                        <input class="editable" type="text" name="name" value="" placeholder="Bodri" aria-label="Név">
+                    </div>
+
+                    <div class="field">
+                        <span class="label">Faj:</span>
+                        <input class="editable" type="text" name="species" value="" placeholder="Kutya" aria-label="Faj">
+                    </div>
+
+                    <div class="field">
+                        <span class="label">Tulajdonos:</span>
+                        <select class="editable" name="ownerId" aria-label="Tulajdonos">
+                            <option value="">Válassz tulajdonost</option>
+                            <% owners.forEach(function (owner) { %>
+                                <option value="<%= owner._id %>"><%= owner.name %></option>
+                            <% }); %>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="actions">
+                    <button class="icon-btn save" type="submit" title="Mentés" aria-label="Mentés">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" aria-hidden="true"><path d="M5 3h11l3 3v15H5z"/><path d="M8 3v6h8V3"/><rect x="8" y="13" width="8" height="5"/></svg>
+                    </button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+<%- include('footer') -%>

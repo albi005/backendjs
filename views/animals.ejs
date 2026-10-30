@@ -1,0 +1,19 @@
+<%- include('header', { title: 'Állatok' }) -%>
+<%- include('menu', { active: 'animals' }) -%>
+
+    <main>
+        <table class="list">
+            <tbody>
+                <% animals.forEach(function (animal) { %>
+                    <tr>
+                        <td><a class="row-link" href="/animals/<%= animal._id %>"><%= animal.name %></a></td>
+                        <td><%= animal.species %></td>
+                        <td><a class="row-link" href="/owners/<%= animal._ownerId %>"><%= animal.ownerName %></a></td>
+                        <td><%= animal.ownerAddress %></td>
+                    </tr>
+                <% }); %>
+            </tbody>
+        </table>
+    </main>
+
+<%- include('footer') -%>

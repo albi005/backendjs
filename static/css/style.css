@@ -156,6 +156,10 @@ select.editable:focus {
     line-height: 0;
 }
 
+a.icon-btn {
+    text-decoration: none;
+}
+
 .icon-btn:hover {
     color: var(--link);
 }
