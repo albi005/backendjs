@@ -42,7 +42,12 @@ const treatments = [
     { _id: 't7', _animalId: 'a1', date: daysAgo(2201), vaccinated: false, description: 'Ízületi gyulladás kezelése' },
     { _id: 't8', _animalId: 'a1', date: daysAgo(2492), vaccinated: true, description: 'Kombinált oltás' },
     { _id: 't9', _animalId: 'a3', date: daysAgo(1039), vaccinated: true, description: 'Veszettség elleni oltás' },
-    { _id: 't10', _animalId: 'a4', date: daysAgo(2326), vaccinated: true, description: 'Kombinált oltás' }
+    { _id: 't10', _animalId: 'a4', date: daysAgo(2326), vaccinated: true, description: 'Kombinált oltás' },
+    { _id: 't11', _animalId: 'a5', date: daysAgo(150), vaccinated: true, description: 'Veszettség elleni oltás' },
+    { _id: 't12', _animalId: 'a7', date: daysAgo(90), vaccinated: true, description: 'Veszettség elleni oltás' },
+    { _id: 't13', _animalId: 'a8', date: daysAgo(240), vaccinated: true, description: 'Kombinált oltás' },
+    { _id: 't14', _animalId: 'a9', date: daysAgo(300), vaccinated: true, description: 'Veszettség elleni oltás' },
+    { _id: 't15', _animalId: 'a10', date: daysAgo(60), vaccinated: true, description: 'Kombinált oltás' }
 ];
 
 const findOwner = (id) => owners.find((owner) => owner._id === id);
