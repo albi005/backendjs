@@ -14,7 +14,7 @@ const daysSinceLastVaccination = (animal) => {
         .filter((treatment) => treatment.vaccinated)
         .map((treatment) => treatment.days);
 
-    return days.length === 0 ? null : Math.min.apply(null, days);
+    return days.length === 0 ? null : Math.min(...days);
 };
 
 module.exports = function (objectRepository) {
@@ -36,7 +36,7 @@ module.exports = function (objectRepository) {
                     };
                 }
 
-                const longest = Math.max.apply(null, days);
+                const longest = Math.max(...days);
                 return {
                     ...owner,
                     vaccination: longest + ' napja',
