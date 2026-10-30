@@ -6,15 +6,16 @@
 
 const requireOption = require('../requireOption');
 const { owners, animalsOfOwner, treatmentsOfAnimal } = require('../../mockData');
+const { daysSince } = require('../../util');
 
 const ANNUAL_VACCINATION_DAYS = 365;
 
 const daysSinceLastVaccination = (animal) => {
-    const days = treatmentsOfAnimal(animal._id)
+    const dates = treatmentsOfAnimal(animal._id)
         .filter((treatment) => treatment.vaccinated)
-        .map((treatment) => treatment.days);
+        .map((treatment) => treatment.date);
 
-    return days.length === 0 ? null : Math.min(...days);
+    return dates.length === 0 ? null : daysSince(Math.max(...dates));
 };
 
 module.exports = function (objectRepository) {

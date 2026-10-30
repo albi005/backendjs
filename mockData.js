@@ -1,3 +1,5 @@
+const { daysAgo } = require('./util');
+
 const owners = [
     { _id: 'o1', name: 'Kovács István', address: 'Budapest, Kossuth Lajos utca 12.', contact: '+36 30 123 4567' },
     { _id: 'o2', name: 'Nagy Erzsébet', address: 'Debrecen, Petőfi Sándor utca 3.', contact: 'nagy.erzsebet@gmail.com' },
@@ -31,16 +33,16 @@ const animals = [
 ];
 
 const treatments = [
-    { _id: 't1', _animalId: 'a1', days: 912, vaccinated: true, description: 'Veszettség elleni oltás' },
-    { _id: 't2', _animalId: 'a1', days: 1010, vaccinated: false, description: 'Éves szűrővizsgálat' },
-    { _id: 't3', _animalId: 'a1', days: 1097, vaccinated: false, description: 'Fogkő-eltávolítás' },
-    { _id: 't4', _animalId: 'a1', days: 1561, vaccinated: true, description: 'Kombinált oltás' },
-    { _id: 't5', _animalId: 'a1', days: 1806, vaccinated: false, description: 'Féregtelenítés' },
-    { _id: 't6', _animalId: 'a1', days: 1884, vaccinated: true, description: 'Veszettség elleni oltás' },
-    { _id: 't7', _animalId: 'a1', days: 2201, vaccinated: false, description: 'Ízületi gyulladás kezelése' },
-    { _id: 't8', _animalId: 'a1', days: 2492, vaccinated: true, description: 'Kombinált oltás' },
-    { _id: 't9', _animalId: 'a3', days: 1039, vaccinated: true, description: 'Veszettség elleni oltás' },
-    { _id: 't10', _animalId: 'a4', days: 2326, vaccinated: true, description: 'Kombinált oltás' }
+    { _id: 't1', _animalId: 'a1', date: daysAgo(912), vaccinated: true, description: 'Veszettség elleni oltás' },
+    { _id: 't2', _animalId: 'a1', date: daysAgo(1010), vaccinated: false, description: 'Éves szűrővizsgálat' },
+    { _id: 't3', _animalId: 'a1', date: daysAgo(1097), vaccinated: false, description: 'Fogkő-eltávolítás' },
+    { _id: 't4', _animalId: 'a1', date: daysAgo(1561), vaccinated: true, description: 'Kombinált oltás' },
+    { _id: 't5', _animalId: 'a1', date: daysAgo(1806), vaccinated: false, description: 'Féregtelenítés' },
+    { _id: 't6', _animalId: 'a1', date: daysAgo(1884), vaccinated: true, description: 'Veszettség elleni oltás' },
+    { _id: 't7', _animalId: 'a1', date: daysAgo(2201), vaccinated: false, description: 'Ízületi gyulladás kezelése' },
+    { _id: 't8', _animalId: 'a1', date: daysAgo(2492), vaccinated: true, description: 'Kombinált oltás' },
+    { _id: 't9', _animalId: 'a3', date: daysAgo(1039), vaccinated: true, description: 'Veszettség elleni oltás' },
+    { _id: 't10', _animalId: 'a4', date: daysAgo(2326), vaccinated: true, description: 'Kombinált oltás' }
 ];
 
 const findOwner = (id) => owners.find((owner) => owner._id === id);
