@@ -16,8 +16,16 @@ const getTreatmentMW = require('../middleware/treatment/getTreatmentMW');
 const saveTreatmentMW = require('../middleware/treatment/saveTreatmentMW');
 const delTreatmentMW = require('../middleware/treatment/delTreatmentMW');
 
+const OwnerModel = require('../models/owner');
+const AnimalModel = require('../models/animal');
+const TreatmentModel = require('../models/treatment');
+
 module.exports = function (app) {
-    const objRepo = {};
+    const objRepo = {
+        OwnerModel,
+        AnimalModel,
+        TreatmentModel
+    };
 
     // Home
     app.get(

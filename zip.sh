@@ -7,6 +7,8 @@ zip -FSr backendjs.zip \
     package-lock.json \
     mockData.js \
     util.js \
+    config \
+    models \
     route \
     middleware \
     views \
